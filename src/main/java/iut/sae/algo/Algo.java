@@ -3,8 +3,7 @@ package iut.sae.algo;
 
 public class Algo{
     public static String RLE(String in){
-        // Provide your algo here
-        return "NotYetImplemented";
+        return ""; 
     }
 
     public static String RLE(String in, int iteration) throws AlgoException{
