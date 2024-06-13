@@ -20,6 +20,11 @@ public class RLEConsole{
         }
 
         System.out.println("Entrée : "+in);
-        System.out.println("Sortie : "+ Algo.RLE(in));
+        try {
+            System.out.println("Sortie : "+ Algo.unRLE(in));
+        } catch (AlgoException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
