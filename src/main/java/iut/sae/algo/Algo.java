@@ -2,18 +2,17 @@ package iut.sae.algo;
 
 public class Algo {
     public static String RLE(String in) {
-        if(in.equals("")) return "";
+        if (in.equals(""))
+            return "";
         String resultat = "";
         char precedent;
         int compteur = 0;
         precedent = in.charAt(0);
         for (char c : in.toCharArray()) {
-            if (c == precedent) {
-                if (compteur != 9) {
-                    compteur++;
-                    continue;
-                } 
-            } 
+            if (c == precedent && compteur != 9) {
+                compteur++;
+                continue;
+            }
             resultat += "" + compteur + precedent;
             compteur = 1;
             precedent = c;
@@ -33,17 +32,19 @@ public class Algo {
 
     public static String unRLE(String in) throws AlgoException {
         String resultat = "";
-        for (int i = 0 ; i < in.length(); i += 2) {
-            resultat += String.valueOf(in.charAt(i+1)).repeat(Integer.parseInt(String.valueOf(in.charAt(i))));
+        for (int i = 0; i < in.length(); i += 2) {
+            String caractere = String.valueOf(in.charAt(i + 1));
+            int nbFoisARepetier = Integer.parseInt(String.valueOf(in.charAt(i)));
+            resultat += caractere.repeat(nbFoisARepetier);
         }
         return resultat;
     }
 
     public static String unRLE(String in, int iteration) throws AlgoException {
         String decoded = in;
-        for(int i = 0 ; i < iteration ; i++){
+        for (int i = 0; i < iteration; i++) {
             decoded = unRLE(decoded);
-        } 
+        }
         return decoded;
 
     }

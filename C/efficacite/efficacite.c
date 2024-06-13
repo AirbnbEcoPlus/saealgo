@@ -1,33 +1,29 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-char RLE(char *in){
-    char rslt[100];
-
-    char precedent;
-
-    int compteur;
-    precedent = in[0];
-
-    for(int i = 0 ; i < strlen(in) ; i++){
-        if (in[i] == precedent){
-            if( compteur != 9){
-                compteur++;
-                continue;
-            }
+char *RLE(char *in)
+{
+    static char rslt[200000];
+    char precedent = in[0];
+    int compteur = 1;
+    int j = 0;
+    int len = strlen(in);
+    for (int i = 1; i <= len; i++)
+    {
+        if (in[i] != precedent || compteur == 9)
+        {
+            rslt[j++] = '0' + compteur;
+            rslt[j++] = precedent;
+            compteur = 1;
+            precedent = in[i];
         }
-        strncat(rslt, &compteur, 1);
-        strncat(rslt, &precedent, 1);
-        compteur = 1;
-        precedent = in[i];
+        compteur++;
     }
-    strncat(rslt, &compteur, 1);
-    strncat(rslt, &precedent, 1);
     return rslt;
 }
 
-int main(void){
-    
-    printf("%s\n", RLE("AAAAABBBBDDDDD"));
+int main(void)
+{
+
+    printf("%s\n", RLE("AABBBBDDDDD"));
 }
