@@ -2,6 +2,9 @@ package iut.sae.algo;
 
 import java.util.Scanner;
 
+import iut.sae.algo.algoToTest.Algo;
+import iut.sae.algo.algoToTest.simplicite22;
+
 public class RLERecursifConsole{
 
     public static void main(String[] args){
@@ -23,14 +26,13 @@ public class RLERecursifConsole{
 
             scanner.close();
         }
-
         try{
             System.out.println("Entrée : "+in);
             System.out.println("Itérations : "+iterations);
-            System.out.println("Sortie : "+ Algo.RLE(in, iterations));
-        }
-        catch(AlgoException e){
-            System.err.println("Erreur lors de la transformation");
+            System.out.println("Sortie : "+ simplicite22.RLE(in, iterations));
+            } catch (AlgoException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
     }
-}

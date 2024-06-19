@@ -2,6 +2,9 @@ package iut.sae.algo;
 
 import java.util.Scanner;
 
+import iut.sae.algo.algoToTest.Algo;
+import iut.sae.algo.algoToTest.simplicite22;
+
 public class RLEConsole{
 
     public static void main(String[] args){
@@ -18,13 +21,13 @@ public class RLEConsole{
 
             scanner.close();
         }
-
         System.out.println("Entrée : "+in);
         try {
-            System.out.println("Sortie : "+ Algo.unRLE(in));
+            System.out.println("Sortie : "+ simplicite22.unRLE(in));
         } catch (AlgoException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
 }
