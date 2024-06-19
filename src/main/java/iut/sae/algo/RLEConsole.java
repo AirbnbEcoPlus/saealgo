@@ -2,7 +2,6 @@ package iut.sae.algo;
 
 import java.util.Scanner;
 
-import iut.sae.algo.algoToTest.Algo;
 import iut.sae.algo.algoToTest.simplicite22;
 
 public class RLEConsole{
